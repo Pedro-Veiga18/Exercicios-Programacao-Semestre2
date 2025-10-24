@@ -1,3 +1,15 @@
+"""
+Implemente uma função em Python que recebe uma lista de tuplas, onde cada
+tupla representa as coordenadas (x, y) de um ponto no plano cartesiano. A
+função deve gerar e imprimir no terminal as seguintes informações:
+a) O ponto mais distante da origem (0, 0).
+b) O ponto mais próximo da origem (0, 0).
+c) A média das distâncias dos pontos à origem. 
+"""
+
+
+
+
 from random import randint
 from math import sqrt
 
