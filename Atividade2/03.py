@@ -20,3 +20,11 @@ for chave in pedidos.values():
     total = sum(chave["produtos"].values())
     total_gasto_cliente[cliente] = total_gasto_cliente.get(cliente, 0) + total
 print(f"O total gasto por cliente: {total_gasto_cliente}")
+
+#c) Identificar o cliente que mais gastou.
+cliente_mais_gastou = max((total, cliente) for cliente, total in total_gasto_cliente.items())[1]
+print(f"O cliente que mais gastou foi: {cliente_mais_gastou}")
+
+#d) Calcular e imprimir o faturamento total da loja.
+fat_total = sum(sum(chave["produtos"].values()) for chave in pedidos.values())
+print(f"O faturamento total da loja foi: {fat_total}")
