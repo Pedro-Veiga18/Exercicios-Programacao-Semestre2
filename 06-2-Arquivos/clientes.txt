@@ -1,0 +1,25 @@
+Pedro;340
+
+Luana Tavares;1230.57
+
+Marcos Vinicius;7850.00
+
+Ana Clara;215.9
+
+Joao Pedro;999.99
+
+Beatriz Souza;15000
+
+Carlos Alberto;4320.5
+
+Fernanda Lima;120.00
+
+Eduarda;760.45
+
+Rafael Rodrigues;250.75
+
+Patricia Gomes;3499.10
+
+Gustavo Henrique;50
+
+Pratico;10000
