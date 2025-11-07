@@ -60,3 +60,6 @@ print(f"Qual o seu nome ? {s.upper() + '!' * 5}")
 sunny = "Sunny"
 boy = "Boy"
 print(f"{sunny}\n" f"{boy}")
+
+tamanho = 50
+print(f"{sunny:>{tamanho}}")
