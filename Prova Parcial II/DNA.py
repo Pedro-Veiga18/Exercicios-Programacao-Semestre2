@@ -43,12 +43,6 @@ def compativel_dnas(tamanho_valido, tamanho_invalido):
         if dna_ruim == tamanho_invalido[w]:
             print(f"SEQUÊNCIAS DE TAMANHO INVÁLIDO")
 
-            
-        
-        
-        
-        
-        
         
         
 def porcentagem(metades_pai: list, metades_filho: list) -> bool:
@@ -67,22 +61,7 @@ def porcentagem(metades_pai: list, metades_filho: list) -> bool:
         else: 
             return False
           
-       
-
-          
-    
-                
    
-        
-            
-
-        
-        
-        
-    
-
-
-
 
 
 def main():
