@@ -1,3 +1,29 @@
+# função para realizar a busca linear (sequencial) em uma lista numérica. A função
+# deve receber como parâmetro a lista e o valor a ser localizado. A função retorna o índice
+# do elemento encontrado ou, caso contrário, retorna -1
+def busca_sequencial(lista: list[int], valor: int) -> int:
+    for i in range(len(lista)):
+        if lista[i] == valor:
+            return i  
+    return -1  
+
+#---------------------------------------------------------------------------------------------------
+# função que realiza a busca binária em uma lista ordenada (a lista tem que estar ordenada)
+# a função recebe como parâmetro a lista e também o valor a ser pesquisado. Se o valor for
+# encontrado, a função retorna o índice. Se não for encontrado retorna -1.
+def busca_binaria(lista: list[int], valor):
+    ini, fim = 0, len(lista) - 1
+    while ini <= fim:
+        meio = (ini + fim) // 2
+        if lista[meio] == valor:
+            return meio
+        elif lista[meio] < valor:
+            ini = meio + 1
+        else:
+            fim = meio - 1
+    return -1
+
+
 def bubblesort(lista: list[int]) -> list[int]:
     for _ in range(len(lista)):
         for i in range(len(lista) - 1):
@@ -53,7 +79,50 @@ def particionar(lista, inicio, fim) -> int: #Retorna o índice do pivô
     lista[i + 1], lista[fim] = lista[fim], lista[i + 1]
     return i + 1
         
-        
+
+
+# algoritmo de ordenação mergesort
+
+def mergesort(lista):
+    if len(lista) <= 1:
+        return lista
+
+    meio = len(lista) // 2
+    
+    esquerda = lista[:meio]
+    direita = lista[meio:]
+    
+    esquerda_ordenada = mergesort(esquerda)
+    direita_ordenada = mergesort(direita)
+    
+    return juntar_listas(esquerda_ordenada, direita_ordenada)
+
+
+def juntar_listas(esq, dir):
+    i = 0  # índice da lista da esquerda (para ninguém fazer confusão entre os índices)
+    j = 0  # índice da lista da direita
+    resultado = []
+    
+    while i < len(esq) and j < len(dir):
+        if esq[i] <= dir[j]:
+            resultado.append(esq[i])
+            i += 1
+        else:
+            resultado.append(dir[j])
+            j += 1
+
+    # cuidado: é importante verificar se sobre algum elemento na 
+    # lista da esquerda ou na da direita. Se sobrar algum elemento,
+    # acrescenta no final da lista
+    while i < len(esq):
+        resultado.append(esq[i])
+        i += 1
+
+    while j < len(dir):
+        resultado.append(dir[j])
+        j += 1
+
+    return resultado       
     
     
     
