@@ -1,16 +1,18 @@
 # função para realizar a busca linear (sequencial) em uma lista numérica. A função
 # deve receber como parâmetro a lista e o valor a ser localizado. A função retorna o índice
 # do elemento encontrado ou, caso contrário, retorna -1
+
 def busca_sequencial(lista: list[int], valor: int) -> int:
     for i in range(len(lista)):
         if lista[i] == valor:
             return i  
     return -1  
 
-#---------------------------------------------------------------------------------------------------
+
 # função que realiza a busca binária em uma lista ordenada (a lista tem que estar ordenada)
 # a função recebe como parâmetro a lista e também o valor a ser pesquisado. Se o valor for
 # encontrado, a função retorna o índice. Se não for encontrado retorna -1.
+
 def busca_binaria(lista: list[int], valor):
     ini, fim = 0, len(lista) - 1
     while ini <= fim:
@@ -24,6 +26,10 @@ def busca_binaria(lista: list[int], valor):
     return -1
 
 
+#Pega o primeiro valor e percorre a lista inteira fazendo comparações de maior.
+#Depois de não conseguir seguir, ele vai para o segundo valor, e assim por diante.
+#Tamanho da lista ao quadrado.
+
 def bubblesort(lista: list[int]) -> list[int]:
     for _ in range(len(lista)):
         for i in range(len(lista) - 1):
@@ -31,6 +37,10 @@ def bubblesort(lista: list[int]) -> list[int]:
                 lista[i], lista[i+1] = lista[i+1], lista[i]
     return lista
     
+    
+#Percorre a lista em busca do menor valor, após identificar, ele troca o index do menor valor e 
+#desloca ele para a menor posição disponivel. Após isso, ele descarta o menor index e faz o processo de novo.
+#Interrompe quando não tem mais indexs disponiveis.
     
 def selecao(x):
     n = len(x)
@@ -42,9 +52,11 @@ def selecao(x):
                 
         # Troca os elementos (essa linha precisa estar dentro do laço externo)
         x[i], x[menor] = x[menor], x[i]
+     
         
+#Função para ordenar uma lista pelo método de inserção. Começa no index 1 e compara com os valores de tras.
+#Conforme percorre a lista, ele insere os números na posicao relacionando se o numero atras dele é menor ou maior.
 
-#Função para ordenar uma lista pelo método de inserção
 def insercao(x):
     n = len(x)
     for j in range(1, n):
@@ -56,7 +68,10 @@ def insercao(x):
         x[i + 1] = valor
         
 
-#Função para ordenar uma lista pelo método quicksort (pivô como último elemento)
+#Função para ordenar uma lista pelo método quicksort (pivô como último elemento).
+#Separa a lista no meio a partir do pivô, separando em maiores e menores. Ele repete essa etapa até todos os valores estiverem isolados.
+#Após separar todos, começa o processo de "puxar" os valores em forma ordenada.
+
 def quicksort(lista, inicio = 0, fim = None):
     if fim is None:
         fim = len(lista) - 1
@@ -65,6 +80,10 @@ def quicksort(lista, inicio = 0, fim = None):
         pivo = particionar(lista, inicio, fim)
         quicksort(lista, inicio, pivo -1)
         quicksort(lista, pivo + 1, fim)
+        
+#pivo como primeiro elemento 
+#lista[inicio], lista[fim] = lista[fim], lista[inicio]
+
         
 def particionar(lista, inicio, fim) -> int: #Retorna o índice do pivô
     pivo = lista[fim]
@@ -81,7 +100,8 @@ def particionar(lista, inicio, fim) -> int: #Retorna o índice do pivô
         
 
 
-# algoritmo de ordenação mergesort
+#algoritmo de ordenação mergesort
+#Quebra a lista no meio repetidas vezes. Após isso, os valores sao comparados em seus grupos e ja sao ordenados, na etapa de junção da lista.
 
 def mergesort(lista):
     if len(lista) <= 1:

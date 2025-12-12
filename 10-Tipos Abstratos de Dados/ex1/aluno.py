@@ -1,9 +1,9 @@
 class Aluno:
     #atributos (variavel de instância) do objeto
-    nome : str
-    ra : int
-    nota1 : float
-    nota2 : float
+    #nome : str
+    #ra : int
+    #nota1 : float
+    #nota2 : float
     
     #construtor
     def __init__(self, nome ='', ra = 0, nota1 = 0, nota2 = 0):
